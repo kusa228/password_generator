@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Генератор паролей</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>PASSWORD GENERATOR</h1>
+
+            <form action="/generate" method="post">
+                <div class="options">
+                    <label class="option">
+                        <input type="checkbox" name="numbers" checked>
+                        <div>
+                            <span>Numbers</span>
+                            <small>adds numbers to the password</small>
+                        </div>
+                    </label>
+
+                    <label class="option">
+                        <input type="checkbox" name="uppercase" checked>
+                        <div>
+                            <span>Uppercase letters</span>
+                            <small>adds numbers to the password</small>
+                        </div>
+                    </label>
+
+                    <label class="option">
+                        <input type="checkbox" name="special" checked>
+                        <div>
+                            <span>Special characters</span>
+                            <small>adds numbers to the password</small>
+                        </div>
+                    </label>
+
+                    <label class="option">
+                        <input type="checkbox" name="capital">
+                        <div>
+                            <span>Capital letters</span>
+                            <small>adds numbers to the password</small>
+                        </div>
+                    </label>
+                </div>
+
+                <button type="submit" class="generate-btn">Generate</button>
+            </form>
+
+            <div class="security-note">
+                🔒 ваши данные защищены.
+                <br>
+                <a href="/history" class="history-link">📜 История паролей</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

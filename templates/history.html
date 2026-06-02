@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>История паролей</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container history-container">
+        <div class="card">
+            <h1>📜 История паролей</h1>
+            <div class="history-list">
+                {% if passwords %}
+                    {% for pwd in passwords %}
+                    <div class="history-item">
+                        <div class="history-password">{{ pwd.password }}</div>
+                        <div class="history-meta">
+                            <span>{{ pwd.created_at[:16] }}</span>
+                            <span class="history-badges">
+                                {% if pwd.numbers %}🔢{% endif %}
+                                {% if pwd.special %}⚡{% endif %}
+                                {% if pwd.uppercase %}🔠{% endif %}
+                                {% if pwd.capital %}🔤{% endif %}
+                            </span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="empty-history">Пока нет сгенерированных паролей</div>
+                {% endif %}
+            </div>
+            <div class="security-note">
+                <a href="/" class="back-link">← На главную</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

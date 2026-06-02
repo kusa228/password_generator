@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ваш пароль</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card result-card">
+            <h1>PASSWORD GENERATOR</h1>
+            <div class="password-display">{{ password }}</div>
+            <div class="security-note">
+                🔒 ваши данные защищены.
+                <br>
+                <a href="/" class="back-link">← Создать новый пароль</a>
+                <a href="/history" class="history-link">📜 История</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
